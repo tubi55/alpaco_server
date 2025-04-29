@@ -6,6 +6,7 @@ import com.example.basic.repository.JoinRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -44,6 +45,6 @@ public class JoinService {
 
     //인수로 페이지 번호를 넘겨받아 해당 페이지에 데이터들만 전달
     public Page<JoinEntity> getUsersByPage(int page, int size){
-        return joinRepo.findAll(PageRequest.of(page, size));
+        return joinRepo.findAll(PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "id")));
     }
 }

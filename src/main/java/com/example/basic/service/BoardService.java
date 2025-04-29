@@ -5,6 +5,7 @@ import com.example.basic.entity.BoardEntity;
 import com.example.basic.entity.JoinEntity;
 import com.example.basic.repository.BoardRepo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class BoardService {
 
     // 모든 게시물 가져오는 메서드
     public List<BoardDTO> getAllBoards() {
-        List<BoardEntity> boardEntities = boardRepo.findAll();
+        List<BoardEntity> boardEntities = boardRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
 
         return boardEntities.stream()
                 .map(board -> new BoardDTO(
