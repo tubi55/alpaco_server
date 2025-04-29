@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/alpaco
+    url: jdbc:mysql://turntable.proxy.rlwy.net:41048/railway
     username: root
-    password: 1234
+    password: lmFyobXPljjxPxFTvbEDCArdiESMRtvl
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
